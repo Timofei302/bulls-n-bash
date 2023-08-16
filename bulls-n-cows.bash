@@ -43,6 +43,18 @@ n2=$(($RANDOM % 9))
 n3=$(($RANDOM % 9))
 n4=$(($RANDOM % 9))
 
+while true
+do
+    if [[ "$n1" == "$n2" || "$n1" == "$n3" || "$n1" == "$n4" || "$n2" == "$n3" || "$n2" == "$n4" || "$n3" == "$n4" ]]; then
+        n1=$(($RANDOM % 9))
+        n2=$(($RANDOM % 9))
+        n3=$(($RANDOM % 9))
+        n4=$(($RANDOM % 9))
+    else
+        break
+    fi
+done
+
 WINNUM="$n1$n2$n3$n4"
 GAVEUP=0
 ATTEMPT=1
